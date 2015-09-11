@@ -48,34 +48,4 @@ class User extends CI_Controller {
 		$this->load->view('dashboard', $data);
 	}
 
-	public function add_quote()
-	{
-		$quote = array(
-						'author' => $this->input->post('author'),
-						'quote' => $this->input->post('quote'),
-						'users_idusers' => $this->session->userdata('user_info')['id']
-					);
-		$this->load->model('Users');
-		$this->Users->add_quote($quote);
-		redirect('/dashboard');
-	}
-
-	public function add_fave()
-	{
-		$fave = array(
-					"users_idusers" => $this->input->post('user_id'),
-					"quotes_idquotes" => $this->input->post('quote_id')
-			);
-		$this->load->model('Users');
-		$this->Users->add_fave($fave);
-		redirect('/dashboard');
-	}
-
-	public function delete_fave()
-	{
-		$this->load->model('Users');
-		$this->Users->remove_fave($this->input->post('fave_id'));
-		redirect('/dashboard');
-	}
-
 }
