@@ -41,14 +41,12 @@
 $route['default_controller'] = "user";
 $route['404_override'] = '';
 $route['register'] = "user/create";
+$route['dashboard'] = "user/show";
 $route['login'] = "session/create";
 $route['logout'] = "session/destroy";
-$route['dashboard'] = "user/show";
-$route['add_quote'] = "user/add_quote";
-$route["add_fave"] = "user/add_fave";
-$route["delete_fave"] = "user/delete_fave";
-$route['test'] = "user/twitter";
-$route['add_twit'] = "user/add_tweet";
+$route['add_quote'] = "quote/create";
+$route["add_fave"] = "favorite/create";
+$route["delete_fave"] = "favorite/delete";
 
 
 /* End of file routes.php */
